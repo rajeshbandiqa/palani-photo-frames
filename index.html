@@ -26,19 +26,12 @@
           text-decoration: none;
           font-weight: bold;
         }
-        .tabs {
+        .filter-section {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
           gap: 10px;
           padding: 20px;
-        }
-        .tabs button {
-          padding: 10px 20px;
-          background: white;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          cursor: pointer;
         }
         .product-list {
           display: flex;
@@ -110,12 +103,7 @@
     </nav>
 </header>
 
-<div class="tabs">
-    <button onclick="filterCategory('Normal Frame')">Normal Frame</button>
-    <button onclick="filterCategory('LED Frame')">LED Frame</button>
-    <button onclick="filterCategory('Chanting Frames')">Chanting Frames</button>
-    <button onclick="filterCategory('Custom Frames')">Custom Frames</button>
-</div>
+<div class="filter-section" id="categoryFilters"></div>
 
 <div id="products" class="product-list"></div>
 
@@ -136,13 +124,29 @@
       const imageRes = await fetch('product-images.json');
       const productData = await productRes.json();
       const imageData = await imageRes.json();
-      products = productData.map(p => ({ ...p, images: imageData[p.name] || [] }));
-      filtered = [...products];
-      renderPage();
+      products = productData.map(p => ({ ...p, images: imageData[p.name] || [], imgIndex: 0 }));
+      createCategoryFilters();
+      filterBySelectedCategories();
     }
 
-    function filterCategory(category) {
-      filtered = products.filter(p => p.category === category);
+    function createCategoryFilters() {
+      const categories = [...new Set(products.map(p => p.category))];
+      const container = document.getElementById('categoryFilters');
+      container.innerHTML = '';
+      categories.forEach(cat => {
+        const label = document.createElement('label');
+        label.style.marginRight = '10px';
+        label.innerHTML = `
+          <input type="checkbox" value="${cat}" checked onchange="filterBySelectedCategories()"> ${cat}
+        `;
+        container.appendChild(label);
+      });
+    }
+
+    function filterBySelectedCategories() {
+      const checkboxes = document.querySelectorAll('#categoryFilters input[type=checkbox]:checked');
+      const selected = Array.from(checkboxes).map(cb => cb.value);
+      filtered = products.filter(p => selected.includes(p.category));
       currentPage = 1;
       renderPage();
     }
@@ -158,15 +162,14 @@
         const product = document.createElement('div');
         product.className = 'product';
 
-        const carouselId = `carousel-${i}`;
-        let imgIndex = 0;
+        const carouselId = `carousel-${p.name.replace(/\s+/g, '')}`;
 
         const carousel = document.createElement('div');
         carousel.className = 'carousel';
         carousel.innerHTML = `
-          <img src="${p.images[0] || 'images/placeholder.jpg'}" id="${carouselId}">
-          <button class="prev" onclick="changeImage('${carouselId}', -1)">&lt;</button>
-          <button class="next" onclick="changeImage('${carouselId}', 1)">&gt;</button>
+          <img src="${p.images[p.imgIndex] || 'images/placeholder.jpg'}" id="${carouselId}" alt="${p.name}">
+          <button class="prev" onclick="changeImage('${p.name}', -1)">&lt;</button>
+          <button class="next" onclick="changeImage('${p.name}', 1)">&gt;</button>
         `;
 
         const info = document.createElement('div');
@@ -176,28 +179,24 @@
         product.appendChild(carousel);
         product.appendChild(info);
         list.appendChild(product);
-
-        p.imgIndex = 0;
       });
 
       renderPagination();
     }
 
-    function changeImage(id, step) {
-      const imgEl = document.getElementById(id);
-      const product = filtered.find(p => id.includes(p.name.replace(/\s/g, '')));
-      if (!product) return;
-
-      product.imgIndex = (product.imgIndex + step + product.images.length) % product.images.length;
-      imgEl.src = product.images[product.imgIndex];
+    function changeImage(productName, step) {
+      const p = products.find(p => p.name === productName);
+      if (!p || !p.images.length) return;
+      p.imgIndex = (p.imgIndex + step + p.images.length) % p.images.length;
+      const carouselId = `carousel-${productName.replace(/\s+/g, '')}`;
+      document.getElementById(carouselId).src = p.images[p.imgIndex];
     }
 
     function renderPagination() {
       const totalPages = Math.ceil(filtered.length / perPage);
       const pagination = document.getElementById('pagination');
       pagination.innerHTML = '';
-
-      for (let i = 1; i <= totalPages; i++) {
+      for (let i = 1; i <= Math.max(5, totalPages); i++) {
         const btn = document.createElement('button');
         btn.textContent = i;
         if (i === currentPage) btn.style.fontWeight = 'bold';
