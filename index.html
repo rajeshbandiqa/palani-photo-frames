@@ -26,12 +26,19 @@
           text-decoration: none;
           font-weight: bold;
         }
-        .filter-section {
+        .tabs {
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
           gap: 10px;
           padding: 20px;
+        }
+        .tabs button {
+          padding: 10px 20px;
+          background: white;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          cursor: pointer;
         }
         .product-list {
           display: flex;
@@ -103,7 +110,12 @@
     </nav>
 </header>
 
-<div class="filter-section" id="categoryFilters"></div>
+<div class="tabs">
+    <button onclick="filterCategory('Normal Frame')">Normal Frame</button>
+    <button onclick="filterCategory('LED Frame')">LED Frame</button>
+    <button onclick="filterCategory('Chanting Frames')">Chanting Frames</button>
+    <button onclick="filterCategory('Custom Frames')">Custom Frames</button>
+</div>
 
 <div id="products" class="product-list"></div>
 
@@ -125,28 +137,12 @@
       const productData = await productRes.json();
       const imageData = await imageRes.json();
       products = productData.map(p => ({ ...p, images: imageData[p.name] || [], imgIndex: 0 }));
-      createCategoryFilters();
-      filterBySelectedCategories();
+      filtered = [...products];
+      renderPage();
     }
 
-    function createCategoryFilters() {
-      const categories = [...new Set(products.map(p => p.category))];
-      const container = document.getElementById('categoryFilters');
-      container.innerHTML = '';
-      categories.forEach(cat => {
-        const label = document.createElement('label');
-        label.style.marginRight = '10px';
-        label.innerHTML = `
-          <input type="checkbox" value="${cat}" checked onchange="filterBySelectedCategories()"> ${cat}
-        `;
-        container.appendChild(label);
-      });
-    }
-
-    function filterBySelectedCategories() {
-      const checkboxes = document.querySelectorAll('#categoryFilters input[type=checkbox]:checked');
-      const selected = Array.from(checkboxes).map(cb => cb.value);
-      filtered = products.filter(p => selected.includes(p.category));
+    function filterCategory(category) {
+      filtered = products.filter(p => p.category === category);
       currentPage = 1;
       renderPage();
     }
@@ -168,8 +164,8 @@
         carousel.className = 'carousel';
         carousel.innerHTML = `
           <img src="${p.images[p.imgIndex] || 'images/placeholder.jpg'}" id="${carouselId}" alt="${p.name}">
-          <button class="prev" onclick="changeImage('${p.name}', -1)">&lt;</button>
-          <button class="next" onclick="changeImage('${p.name}', 1)">&gt;</button>
+          <button class="prev" onclick="changeImage('${p.name}', -1)" aria-label="Previous image">&lt;</button>
+          <button class="next" onclick="changeImage('${p.name}', 1)" aria-label="Next image">&gt;</button>
         `;
 
         const info = document.createElement('div');
