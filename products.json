@@ -1,46 +1,54 @@
 [
   {
-    "name": "LED Krishna Frame",
-    "description": "Krishna photo frame with LED lighting and built-in chants."
+    "name": "Lord Balaji 1",
+    "description": "Elegant Balaji photo frame with LED lighting, divine chants, and fine detailing. Ideal for pooja rooms (10x12 size)."
   },
   {
-    "name": "Shiva Musical Frame",
-    "description": "Shiva frame with decorated stones and Om Namah Shivaya chant."
+    "name": "Lord Balaji 2",
+    "description": "Classic Balaji frame with antique gold accents and embedded LED lights for devotional ambiance."
   },
   {
-    "name": "Normal Wooden Frame",
-    "description": "Classic wooden frame with traditional finish."
+    "name": "Lord Balaji 3",
+    "description": "Beautifully crafted Lord Balaji frame with intricate design and subtle glow. Perfect for homes and shops."
   },
   {
-    "name": "Custom Designer Frame",
-    "description": "Handmade custom frame with LED and music options."
+    "name": "Lord Balaji 4",
+    "description": "Premium Balaji photo frame with modern aesthetics and devotional audio support. Ideal for gifting."
   },
   {
-    "name": "Premium Chanting Frame",
-    "description": "Frame with built-in speaker playing mantras."
+    "name": "Lord Balaji 5",
+    "description": "Traditional Lord Balaji frame enriched with decorative stones and spiritual lighting effects."
   },
   {
-    "name": "Large God Portrait",
-    "description": "Large format frame suitable for hall or pooja room."
+    "name": "Lord Balaji 6",
+    "description": "Shiny frame featuring Lord Balaji with built-in lighting and chants, perfect for temples and homes."
   },
   {
-    "name": "Miniature LED Frame",
-    "description": "Compact LED-lit devotional frame for gifting."
+    "name": "Lord Balaji 7",
+    "description": "Balaji photo frame with LED and crystal stone work. Suited for personal devotion corners."
   },
   {
-    "name": "Radha Krishna Frame",
-    "description": "Devotional frame of Radha Krishna in divine pose."
+    "name": "Lord Balaji 8",
+    "description": "Balaji frame with gold detailing and warm LED lighting. Best fit for 10x12 pooja space."
   },
   {
-    "name": "Temple Style Wooden Frame",
-    "description": "Temple-style premium wood finish frame."
+    "name": "Lord Balaji 9",
+    "description": "Divine Balaji photo with deep arch frame, integrated lights and devotional sound playback."
   },
   {
-    "name": "Ganesh Ji Chanting Frame",
-    "description": "Ganesh frame with chant playback and LED decor."
+    "name": "Lord Balaji 10",
+    "description": "Highly polished Balaji frame featuring vibrant LED lights and traditional styling."
   },
   {
-    "name": "Hanuman LED Frame",
-    "description": "Vibrant Hanuman LED-backlit devotional frame."
+    "name": "Lord Balaji 11",
+    "description": "Modernized Balaji portrait in elegant frame, includes LED lights and Om chant player."
+  },
+  {
+    "name": "Lord Balaji with Alivelu",
+    "description": "Unique representation of Lord Balaji with Alivelu Thayar, enhanced with LED backlight and devotion-rich design."
+  },
+  {
+    "name": "Goddess Saraswati",
+    "description": "Goddess Saraswati photo frame with detailed jewel work and embedded chant player. Ideal for study or learning spaces."
   }
 ]

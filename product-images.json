@@ -1,52 +1,15 @@
 {
-  "LED Krishna Frame": [
-    "images/ganesh.jpg",
-    "images/frame1a.jpg",
-    "images/frame1b.jpg",
-    "images/frame1c.jpg"
-  ],
-  "Shiva Musical Frame": [
-    "images/krishna.jpg",
-    "images/frame2a.jpg",
-    "images/frame2b.jpg",
-    "images/frame2c.jpg"
-  ],
-  "Normal Wooden Frame": [
-    "images/frame3a.jpg",
-    "images/frame3b.jpg",
-    "images/frame3c.jpg"
-  ],
-  "Custom Designer Frame": [
-    "images/frame4a.jpg",
-    "images/frame4b.jpg",
-    "images/frame4c.jpg"
-  ],
-  "Premium Chanting Frame": [
-    "images/frame5a.jpg",
-    "images/frame5b.jpg"
-  ],
-  "Large God Portrait": [
-    "images/frame6a.jpg",
-    "images/frame6b.jpg"
-  ],
-  "Miniature LED Frame": [
-    "images/frame7a.jpg",
-    "images/frame7b.jpg"
-  ],
-  "Radha Krishna Frame": [
-    "images/frame8a.jpg",
-    "images/frame8b.jpg"
-  ],
-  "Temple Style Wooden Frame": [
-    "images/frame9a.jpg",
-    "images/frame9b.jpg"
-  ],
-  "Ganesh Ji Chanting Frame": [
-    "images/frame10a.jpg",
-    "images/frame10b.jpg"
-  ],
-  "Hanuman LED Frame": [
-    "images/frame11a.jpg",
-    "images/frame11b.jpg"
-  ]
+  "Lord Balaji 1": ["normal/Balaji.jpg"],
+  "Lord Balaji 2": ["normal/Balaji2.jpg"],
+  "Lord Balaji 3": ["normal/Balaji3.jpg"],
+  "Lord Balaji 4": ["normal/Balaji4.jpg"],
+  "Lord Balaji 5": ["normal/Balaji5.jpg"],
+  "Lord Balaji 6": ["normal/Balaji6.jpg"],
+  "Lord Balaji 7": ["normal/Balaji7.png"],
+  "Lord Balaji 8": ["normal/Balaji8.jpg"],
+  "Lord Balaji 9": ["normal/Balaji9.jpg"],
+  "Lord Balaji 10": ["normal/Balaji10.jpg"],
+  "Lord Balaji 11": ["normal/Balaji11.jpg"],
+  "Lord Balaji with Alivelu": ["normal/Balaji_Alivelu.jpg"],
+  "Goddess Saraswati": ["normal/Saraswati.jpg"]
 }
