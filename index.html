@@ -14,16 +14,38 @@
         header {
           background: #343a40;
           color: white;
-          padding: 10px 20px;
+          padding: 20px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
         }
-        nav a {
-          margin: 0 15px;
+        .header-left {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+        .header-left img {
+          height: 50px;
+          cursor: pointer;
+        }
+        .header-left .title {
+          font-size: 20px;
+          font-weight: bold;
           color: white;
           text-decoration: none;
+        }
+        .header-right {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+        .header-right img {
+          height: 40px;
+          border-radius: 50%;
+        }
+        .header-right .phone {
+          color: white;
           font-weight: bold;
         }
         .product-list {
@@ -73,6 +95,25 @@
           padding: 5px 10px;
           margin: 0 5px;
         }
+        .contact-section {
+          text-align: center;
+          padding: 40px 10px;
+          background-color: #ffffff;
+          border-top: 1px solid #ccc;
+        }
+        .contact-section h2 {
+          margin-bottom: 20px;
+        }
+        .contact-icons a {
+          display: inline-block;
+          margin: 0 10px;
+          color: #333;
+          text-decoration: none;
+        }
+        .contact-icons img {
+          width: 30px;
+          vertical-align: middle;
+        }
         footer {
           background: #343a40;
           color: white;
@@ -89,17 +130,37 @@
 </head>
 <body>
 <header>
-    <div><strong>Palani Photo Frames</strong></div>
-    <nav>
-        <a href="index.html">Products</a>
-        <a href="book.html">Book Your Order</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+    <div class="header-left">
+        <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+        <a class="title" href="index.html">Palani Photo Frames</a>
+    </div>
+    <div class="header-right">
+        <span class="phone">📞 +91 88016 14845</span>
+        <img src="images/owner.png" alt="Owner">
+    </div>
 </header>
 
 <div id="products" class="product-list"></div>
 
 <div class="pagination" id="pagination"></div>
+
+<section class="contact-section">
+    <h2>📞 Contact Us</h2>
+    <div class="contact-icons">
+        <a href="https://wa.me/918801614845" target="_blank">
+            <img src="images/whatsapp.png" alt="WhatsApp"> WhatsApp: Chat on WhatsApp
+        </a>
+        <a href="https://youtube.com" target="_blank">
+            <img src="images/youtube.png" alt="YouTube"> YouTube
+        </a>
+        <a href="mailto:info@palaniframes.in">
+            <img src="images/email.png" alt="Email"> Email
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="Instagram"> Instagram
+        </a>
+    </div>
+</section>
 
 <footer>
     <p>&copy; 2025 Palani Photo Frames. All rights reserved.</p>
