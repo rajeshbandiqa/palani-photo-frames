@@ -6,5 +6,41 @@
   {
     "name": "Shiva Musical Frame",
     "description": "Shiva frame with decorated stones and Om Namah Shivaya chant."
+  },
+  {
+    "name": "Normal Wooden Frame",
+    "description": "Classic wooden frame with traditional finish."
+  },
+  {
+    "name": "Custom Designer Frame",
+    "description": "Handmade custom frame with LED and music options."
+  },
+  {
+    "name": "Premium Chanting Frame",
+    "description": "Frame with built-in speaker playing mantras."
+  },
+  {
+    "name": "Large God Portrait",
+    "description": "Large format frame suitable for hall or pooja room."
+  },
+  {
+    "name": "Miniature LED Frame",
+    "description": "Compact LED-lit devotional frame for gifting."
+  },
+  {
+    "name": "Radha Krishna Frame",
+    "description": "Devotional frame of Radha Krishna in divine pose."
+  },
+  {
+    "name": "Temple Style Wooden Frame",
+    "description": "Temple-style premium wood finish frame."
+  },
+  {
+    "name": "Ganesh Ji Chanting Frame",
+    "description": "Ganesh frame with chant playback and LED decor."
+  },
+  {
+    "name": "Hanuman LED Frame",
+    "description": "Vibrant Hanuman LED-backlit devotional frame."
   }
 ]
