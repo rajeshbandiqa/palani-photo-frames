@@ -159,6 +159,76 @@
 <footer>
     <p>&copy; 2025 Palani Photo Frames. All rights reserved.</p>
     <p>Site Maintained by <a href="https://rajeshbandi.in/" target="_blank" style="color: #ccc; text-decoration: underline;">RajeshBandi</a></p>
+
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p style="max-width: 800px; margin: auto; line-height: 1.6;">
+            At Palani Photo Frames, we blend divinity with creativity to deliver beautiful and devotional photo frames.
+            Our products include LED-lit, musical, and customized God photo frames, handcrafted with care and love.
+            Whether you're looking to gift, decorate your pooja room, or celebrate an occasion, our frames bring spiritual warmth to every home.
+        </p>
+    </section>
+
+    <section class="gallery-section">
+        <h2>🎉 Owner & Celebrity Gallery</h2>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/aboutus1.jpg" alt="Owner" />
+                <p class="caption">#Manchu Manoj - TFI Hero with Mr.Palani </p>
+            </div>
+            <div class="slide fade">
+                <img src="images/aboutus2.jpg" alt="Celebrity 1" />
+                <p class="caption">Actor praising our premium chanting frame</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .about-section, .gallery-section {
+          text-align: center;
+          padding: 40px 20px;
+          background: #fff;
+          color: #333;
+        }
+        .slideshow-container {
+          position: relative;
+          max-width: 600px;
+          margin: 30px auto;
+        }
+        .slide {
+          display: none;
+          animation: fadeEffect 2s;
+        }
+        .slide img {
+          width: 100%;
+          border-radius: 10px;
+          box-shadow: 0 0 10px #ccc;
+        }
+        .caption {
+          font-weight: bold;
+          margin-top: 10px;
+        }
+        @keyframes fadeEffect {
+          from {opacity: 0.4}
+          to {opacity: 1}
+        }
+    </style>
+
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+          let slides = document.getElementsByClassName("slide");
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}
+          slides[slideIndex - 1].style.display = "block";
+          setTimeout(showSlides, 3000);
+        }
+        document.addEventListener('DOMContentLoaded', showSlides);
+    </script>
+
 </footer>
 
 <script>
