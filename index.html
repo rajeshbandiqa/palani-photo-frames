@@ -13,14 +13,30 @@
           color: #000;
           overflow-x: hidden;
         }
-        header {
+       header {
+          background: #343a40;
+          color: white;
+          padding: 20px;
           display: flex;
-          flex-direction: column;
+          justify-content: space-between;
           align-items: center;
+          flex-wrap: wrap;
         }
-        header img {
-          height: 80px;
-          animation: blink 2s infinite;
+        .header-left {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+        .header-left img {
+          height: 50px;
+          cursor: pointer;
+        }
+        .header-left .title {
+          font-size: 28px;
+          font-weight: 800;
+          color: white;
+          text-decoration: none;
+          font-family: 'Georgia', serif;
         }
         @keyframes blink {
           0%, 100% { opacity: 1; }
@@ -136,15 +152,13 @@
     <h2>📞 Contact Us</h2>
     <div class="contact-icons">
         <a href="https://wa.me/918801614845" target="_blank">
-            <img src="images/whatsapp.png" alt="WhatsApp"> WhatsApp: Chat on WhatsApp
+            <img src="images/whatsapp.png" alt="WhatsApp"> Chat on WhatsApp
         </a>
-    </div>
-    <div class="contact-icons">
+
         <a href="tel:+918801614845">
-            <img src="images/call.png" alt="Call"> Call: +91 8801614845
+            <img src="images/call.png" alt="Call"> Call
         </a>
-    </div>
-    <div class="contact-icons">
+
         <a href="https://youtube.com" target="_blank">
             <img src="images/youtube.png" alt="YouTube"> YouTube
         </a>
